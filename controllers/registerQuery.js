@@ -10,8 +10,8 @@ router.post('/register', function (req, res, next) {
 
   var dataStore = new DataStore(req.body.investigation.organization, req.body.investigation.product);
 
-  dataStore.registerQuery(queryName, queryDefinition).done(function (response) {
-    res.send(response);
+  dataStore.registerQuery(queryName, queryDefinition).done(function () {
+    res.send(201); // created
   }, next);
 });
 
