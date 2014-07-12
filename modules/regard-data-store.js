@@ -1,6 +1,8 @@
 var request = require('request');
 var Promise = require('promise');
 
+var queryEndpoint = 'https://query.withregard.io:8888/product/v1';
+
 function makeRequest(options) {
   return new Promise(function (fulfill, reject) {
     request(options, function (error, response, body) {
@@ -21,7 +23,7 @@ function getUrls(organizationId, productId) {
   }
 
   function endpointUrl() {
-    return joinUrl('https://query.withregard.io:8888/product/v1', organizationId, productId);
+    return joinUrl(queryEndpoint, organizationId, productId);
   }
 
   return {
@@ -63,7 +65,7 @@ module.exports = function (organizationId, productId) {
   if (!organizationId) {
     throw new Error('missing organization');
   }
-  
+
   if (!productId) {
     throw new Error('missing product');
   }

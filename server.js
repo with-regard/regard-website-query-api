@@ -3,8 +3,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
-var chartDataController = require('./modules/chartDataController.js');
-var userEventsController = require('./modules/userEventsController.js');
+var chartDataController = require('./controllers/chartData.js');
+var userEventsController = require('./controllers/userEvents.js');
+var registerQueryController = require('./controllers/registerQuery.js');
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
 var db = mongoose.connection;
@@ -18,6 +19,7 @@ app.use(bodyParser());
 var apiVersion = '/v1';
 app.use(apiVersion, chartDataController);
 app.use(apiVersion, userEventsController);
+app.use(apiVersion, registerQueryController);
 
 // Routes
 app.get('/', function (req, res) {
