@@ -1,0 +1,7 @@
+{
+    "port": 3002,
+    "COOKIE_SECRET": "secret",
+    "MONGODB_CONNECTION_STRING": "mongodb://localhost:27017/developer-portal",
+    "QUERY_USERNAME": "agTsC1nuq9DwHKAaK5p6psNDmmHlOy",
+    "QUERY_PASSWORD": "0MLWiDn58pH9wnRo9L8Etq4cPVO8I2"
+}
