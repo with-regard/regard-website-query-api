@@ -1,7 +1,7 @@
 var request = require('request');
 var Promise = require('promise');
 
-var queryEndpoint = 'https://query.withregard.io:8888/product/v1';
+var queryEndpoint = 'https://query.withregard.io:8888/project/v1';
 
 function makeRequest(options) {
   return new Promise(function (fulfill, reject) {
@@ -16,18 +16,18 @@ function makeRequest(options) {
   });
 }
 
-function getUrls(organizationId, productId) {
+function getUrls(organizationId, projectId) {
   function joinUrl() {
     var args = Array.prototype.slice.call(arguments);
     return args.join('/');
   }
 
   function endpointUrl() {
-    return joinUrl(queryEndpoint, organizationId, productId);
+    return joinUrl(queryEndpoint, organizationId, projectId);
   }
 
   return {
-    createProduct: function () {
+    createproject: function () {
       return joinUrl(endpointUrl(), 'create');
     },
 
@@ -61,19 +61,19 @@ function getUrls(organizationId, productId) {
   };
 }
 
-module.exports = function (organizationId, productId) {
+module.exports = function (organizationId, projectId) {
   if (!organizationId) {
     throw new Error('missing organization');
   }
 
-  if (!productId) {
-    throw new Error('missing product');
+  if (!projectId) {
+    throw new Error('missing project');
   }
 
-  var urls = getUrls(organizationId, productId);
+  var urls = getUrls(organizationId, projectId);
 
   return {
-    createProduct: function () {
+    createproject: function () {
 
     },
 
