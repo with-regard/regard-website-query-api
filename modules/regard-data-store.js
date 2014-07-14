@@ -1,7 +1,7 @@
 var request = require('request');
 var Promise = require('promise');
 
-var queryEndpoint = 'https://query.withregard.io:8888/project/v1';
+var queryEndpoint = 'https://query.withregard.io:8888/product/v1';
 
 function makeRequest(options) {
   return new Promise(function (fulfill, reject) {
