@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var compression = require('compression')
 var cors = require('cors');
 
 var chartDataController = require('./controllers/chartData.js');
@@ -14,6 +15,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 var app = express();
 
 app.use(cors( {origin: true} ));
+app.use(compression());
 app.use(bodyParser());
 
 var apiVersion = '/v1';
