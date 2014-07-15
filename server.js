@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var compression = require('compression')
+var compression = require('compression');
 var cors = require('cors');
 
 var chartDataController = require('./controllers/chartData.js');
