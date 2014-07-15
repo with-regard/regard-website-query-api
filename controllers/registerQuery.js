@@ -1,6 +1,5 @@
 var express = require('express');
 var DataStore = require('../modules/regard-data-store.js');
-var Investigation = require('../schemas/investigation.js');
 
 var router = express.Router();
 

@@ -9,10 +9,10 @@ router.get('/userevents/:organization/:product/:id', function (req, res, next) {
 
   dataStore.getEventsForUser(id).then(function (events) {
     res.json({
-      "user-events": [{
-        _id: id,
-        events: JSON.parse(events)
-      }]
+      id: req.params.id,
+      organization: req.params.organization,
+      product: req.params.product,
+      events: JSON.parse(events)
     });
   }, next);
 });
