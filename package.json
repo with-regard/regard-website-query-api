@@ -1,21 +1,22 @@
 {
-  "name": "regard-website-api",
+  "name": "regard-website-query-api",
   "version": "1.0.3",
   "engines": {
     "node": "0.10.26"
   },
-  "description": "Api for Regard website",
+  "description": "Api for Regard query engine",
   "main": "server.js",
   "author": "",
   "license": "Apache v2",
-  "repository": "https://github.com/with-regard/regard-website.git",
+  "repository": "https://github.com/with-regard/regard-website-query-api",
   "dependencies": {
     "express": "~4.0.0",
     "compression": "~1.0.1",
     "body-parser": "~1.0.2",
     "request": "~2.34.0",
     "promise": "~5.0.0",
-    "cors": "~2.4.1"
+    "cors": "~2.4.1",
+    "regard-query-client-node": "with-regard/regard-query-client-node"
   },
   "devDependencies": {
     "gulp": "^3.6.2",

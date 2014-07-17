@@ -25,8 +25,8 @@ app.use(apiVersion, registerQueryController);
 
 // Routes
 app.get('/', function (req, res) {
-  res.send('Regard website datastore running');
+  res.send('Regard website query client running');
 });
 
 app.listen(process.env.port);
-console.log("Website datastore started on " + process.env.port);
+console.log("Website query client started on " + process.env.port);

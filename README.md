@@ -1,7 +1,7 @@
-regard-website-datastore
+regard-website-QueryClient
 ========================
 
-Endpoint: `https://website-datastore.withregard.io/v1/`
+Endpoint: `https://website-QueryClient.withregard.io/v1/`
 
 
 API

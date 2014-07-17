@@ -1,13 +1,13 @@
 var express = require('express');
-var DataStore = require('../modules/regard-data-store.js');
+var QueryClient = require('regard-query-client-node');
 
 var router = express.Router();
 
 router.get('/userevents/:organization/:product/:id', function (req, res, next) {
   var id = req.params.id;
-  var dataStore = new DataStore(req.params.organization, req.params.product);
+  var QueryClient = new QueryClient(req.params.organization, req.params.product);
 
-  dataStore.getEventsForUser(id).then(function (events) {
+  QueryClient.getEventsForUser(id).then(function (events) {
     res.json({
       id: req.params.id,
       organization: req.params.organization,
@@ -19,9 +19,9 @@ router.get('/userevents/:organization/:product/:id', function (req, res, next) {
 
 router.delete('/userevents/:organization/:product/:id', function (req, res, next) {
   var id = req.params.id;
-  var dataStore = new DataStore(req.params.organization, req.params.product);
+  var QueryClient = new QueryClient(req.params.organization, req.params.product);
 
-  dataStore.deleteData(id).then(function () {
+  QueryClient.deleteData(id).then(function () {
     res.send(200);
   }, next);
 });

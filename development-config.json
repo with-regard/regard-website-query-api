@@ -1,7 +1,7 @@
 {
     "port": 3002,
     "COOKIE_SECRET": "secret",
-    "MONGODB_CONNECTION_STRING": "mongodb://localhost:27017/developer-portal",
+    "MONGODB_CONNECTION_STRING": "mongodb://regard:8^2)'68]>b97^<A@ds027748.mongolab.com:27748/developer-portal",
     "QUERY_USERNAME": "agTsC1nuq9DwHKAaK5p6psNDmmHlOy",
     "QUERY_PASSWORD": "0MLWiDn58pH9wnRo9L8Etq4cPVO8I2"
 }
