@@ -5,9 +5,9 @@ var router = express.Router();
 
 router.get('/userevents/:organization/:product/:id', function (req, res, next) {
   var id = req.params.id;
-  var QueryClient = new QueryClient(req.params.organization, req.params.product);
+  var client = new QueryClient(req.params.organization, req.params.product);
 
-  QueryClient.getEventsForUser(id).then(function (events) {
+  client.getEventsForUser(id).then(function (events) {
     res.json({
       id: req.params.id,
       organization: req.params.organization,
@@ -19,9 +19,9 @@ router.get('/userevents/:organization/:product/:id', function (req, res, next) {
 
 router.delete('/userevents/:organization/:product/:id', function (req, res, next) {
   var id = req.params.id;
-  var QueryClient = new QueryClient(req.params.organization, req.params.product);
+  var client = new QueryClient(req.params.organization, req.params.product);
 
-  QueryClient.deleteData(id).then(function () {
+  client.deleteData(id).then(function () {
     res.send(200);
   }, next);
 });

@@ -8,9 +8,9 @@ router.get('/chartdata/:organization/:product/:id', function (req, res, next) {
   var organization = req.params.organization;
   var product = req.params.product;
 
-  var QueryClient = new QueryClient(organization, product);
+  var client = new QueryClient(organization, product);
 
-  QueryClient.runQuery(id).then(function (result) {
+  client.runQuery(id).then(function (result) {
     res.json(JSON.parse(result).Results);
   }, next);
 });

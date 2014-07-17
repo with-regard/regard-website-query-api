@@ -10,9 +10,9 @@ router.post(':organization/:project/register', function (req, res, next) {
   var queryName = req.body.query.id;
   var queryDefinition = req.body.query.queryDefinition;
 
-  var QueryClient = new QueryClient(organization, project);
+  var client = new QueryClient(organization, project);
 
-  QueryClient.registerQuery(queryName, queryDefinition).done(function () {
+  client.registerQuery(queryName, queryDefinition).done(function () {
     res.send(201); // created
   }, next);
 });
